@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const skills = {
+  Languages: ["Java", "Python", "TypeScript", "JavaScript", "SQL", "C", "HTML", "CSS"],
+  "Frameworks & Libraries": ["Spring Boot", "React.js", "Next.js", "Node.js", "FastAPI", "Flask", "JUnit", "Mockito", "Cucumber"],
+  Tools: ["Docker", "Kubernetes", "Camunda", "Sonarqube", "Google Cloud Platform", "OpenShift Cloud Platform", "PostgreSQL", "MongoDB", "Git", "GitHub Actions", "Linux", "Jira", "Figma", "Firebase"],
+};
+---
+<BaseLayout title="Tech" description="Technical skills and stack used by Ethan Walsh.">
+  <p style="font-style: italic; margin-bottom: 0.5rem;">The stack:</p>
+  {Object.entries(skills).map(([category, items]) => (
+    <p><strong>{category}:</strong> {items.join(', ')}</p>
+  ))}
+</BaseLayout>

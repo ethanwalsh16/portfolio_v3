@@ -1,0 +1,54 @@
+/* Matches the existing site's cream/serif aesthetic -- kept deliberately
+   minimal so content (the actual gap identified in review) is the focus,
+   not a redesign. Adjust the palette below once you're ready to iterate. */
+
+:root {
+  --color-bg: #FAF6E8;
+  --color-text: #2B2A28;
+  --color-text-muted: #6B6862;
+  --color-link: #2B4C7E;
+  --color-border: #E3DDC8;
+  --font-serif: "Georgia", "Iowan Old Style", "Palatino Linotype", serif;
+  --max-width: 700px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-serif);
+  line-height: 1.6;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+a { color: var(--color-link); }
+
+h1, h2 {
+  font-weight: 400;
+}
+
+.stack {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.entry {
+  margin-bottom: 2rem;
+}
+
+.entry + .entry {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.entry--featured {
+  border-left: 3px solid var(--color-link);
+  padding-left: 1rem;
+}

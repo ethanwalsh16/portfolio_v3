@@ -1,0 +1,19 @@
+---
+import { render } from 'astro:content';
+
+const { entry } = Astro.props;
+const { role, company, location, dateRange, stack, featured } = entry.data;
+const { Content } = await render(entry);
+---
+<div class={`entry ${featured ? 'entry--featured' : ''}`}>
+  <h3 style="margin-bottom: 0.1rem; font-size: 1.1rem;">{role}</h3>
+  <p style="margin: 0 0 0.5rem; color: var(--color-text-muted); font-style: italic;">
+    {company}{location && ` -- ${location}`} ({dateRange})
+  </p>
+  <div class="entry-body">
+    <Content />
+  </div>
+  {stack.length > 0 && (
+    <p class="stack" style="margin-top: 0.5rem;">Used: {stack.join(', ')}</p>
+  )}
+</div>

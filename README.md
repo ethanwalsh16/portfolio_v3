@@ -1,2 +1,1 @@
-# portfolio_v3
-Personal portfolio site built with Astro.
+Simple portfolio site built with Astro. Details on work experience, projects, and tech stack.

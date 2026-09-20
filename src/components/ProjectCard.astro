@@ -1,0 +1,25 @@
+---
+import { render } from 'astro:content';
+
+const { entry } = Astro.props;
+const { title, stack, status, github, demo, image } = entry.data;
+const { Content } = await render(entry);
+---
+<div class="entry">
+  <h3 style="margin-bottom: 0.3rem; font-size: 1.1rem;">
+    {title}{status === 'in-progress' && ' (in-progress)'}
+  </h3>
+
+  //{image && <img src={image} alt={`${title} preview`} style="max-width: 100%; border-radius: 4px; margin-bottom: 0.75rem;" />}
+
+  <div class="entry-body">
+    <Content />
+  </div>
+
+  <p class="stack" style="margin-top: 0.5rem;">Used: {stack.join(', ')}</p>
+
+  <div style="display: flex; gap: 1rem; margin-top: 0.4rem; font-style: italic; font-size: 0.9rem;">
+    {github && <a href={github}>GitHub</a>}
+    {demo && <a href={demo}>Demo</a>}
+  </div>
+</div>

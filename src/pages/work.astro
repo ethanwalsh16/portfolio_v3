@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WorkEntry from '../components/WorkEntry.astro';
+
+const entries = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout title="Work" description="Ethan Walsh's internship experience across fintech, nuclear energy, and software engineering.">
+  <h1>Work</h1>
+  {entries.map(entry => <WorkEntry entry={entry} />)}
+</BaseLayout>

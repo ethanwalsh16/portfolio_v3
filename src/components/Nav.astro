@@ -1,0 +1,17 @@
+---
+const links = [
+  { href: '/', label: 'home' },
+  { href: '/work', label: 'work' },
+  { href: '/projects', label: 'projects' },
+  { href: '/tech', label: 'tech' },
+  { href: '/media', label: 'media' },
+];
+---
+<nav style="display: flex; gap: 1.5rem; align-items: center; margin-bottom: 2.5rem;">
+  <a href="/" style="font-size: 1.1rem; text-decoration: none; color: var(--color-text);">ethanwalsh.ca</a>
+  <div style="display: flex; gap: 1.25rem; margin-left: 1rem;">
+    {links.slice(1).map(link => (
+      <a href={link.href} style="text-decoration: none; font-size: 0.95rem;">{link.label}</a>
+    ))}
+  </div>
+</nav>
